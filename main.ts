@@ -1,18 +1,21 @@
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
-    basic.pause(500)
+    basic.showString("temp")
     basic.showNumber(input.temperature())
+    basic.pause(slowness)
 })
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
-    basic.pause(500)
+    basic.showString("light")
     basic.showNumber(input.lightLevel())
+    basic.pause(slowness)
 })
-function doLights () {
-	
-}
+
+let slowness: number
+slowness = 500
+
 basic.forever(function () {
-    basic.pause(500)
+    basic.pause(slowness)
     if (input.lightLevel() < 255) {
         basic.showLeds(`
             . . . . .
@@ -21,7 +24,6 @@ basic.forever(function () {
             . . . . .
             . . . . .
             `)
-        basic.pause(500)
         basic.showLeds(`
             . . . . .
             . # . # .
@@ -29,33 +31,71 @@ basic.forever(function () {
             . # . # .
             . . . . .
             `)
-        basic.pause(500)
         basic.showLeds(`
-            # . # . #
-            . # # # .
-            # # # # #
-            . # # # .
-            # . # . #
-            `)
-        basic.pause(500)
-        basic.showLeds(`
-            # . # . #
-            . # # # .
-            # # . # #
-            . # # # .
-            # . # . #
-            `)
-        basic.pause(500)
-        basic.showLeds(`
-            # . # . #
             . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            . . . . .
+            `)
+        basic.showLeds(`
             # . . . #
-            . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            # . . . #
+            `)
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . . . #
+            . # . # .
             # . # . #
             `)
-        basic.pause(500)
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . . . #
+            . # . # .
+            # . # . #
+            `)
+        basic.showLeds(`
+            # . . . #
+            . # # # .
+            . # . # .
+            . # # # .
+            # . . . #
+            `)
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            . . . . .
+            `)
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . # . .
+            . # . # .
+            . . . . .
+            `)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
         basic.clearScreen()
-        basic.pause(500)
+        basic.pause(slowness)
     } else {
         basic.clearScreen()
     }
