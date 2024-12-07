@@ -1,102 +1,111 @@
 input.onButtonPressed(Button.A, function () {
+    led.stopAnimation()
     basic.clearScreen()
     basic.showString("temp")
     basic.showNumber(input.temperature())
-    basic.pause(slowness)
+    basic.pause(500)
 })
 input.onButtonPressed(Button.B, function () {
+    led.stopAnimation()
     basic.clearScreen()
     basic.showString("light")
     basic.showNumber(input.lightLevel())
-    basic.pause(slowness)
+    basic.pause(500)
 })
-
 let slowness: number
-slowness = 500
-
+slowness = 0
+let slowness2: number
+slowness2 = 500
 basic.forever(function () {
     basic.pause(slowness)
-    if (input.lightLevel() < 255) {
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
-        basic.showLeds(`
-            . . . . .
-            . # . # .
-            . . # . .
-            . # . # .
-            . . . . .
-            `)
-        basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # . # .
-            . # # # .
-            . . . . .
-            `)
-        basic.showLeds(`
-            # . . . #
-            . # # # .
-            . # . # .
-            . # # # .
-            # . . . #
-            `)
-        basic.showLeds(`
-            # . # . #
-            . # . # .
-            # . . . #
-            . # . # .
-            # . # . #
-            `)
-        basic.showLeds(`
-            # # # # #
-            # . . . #
-            # . . . #
-            # . . . #
-            # # # # #
-            `)
-        basic.showLeds(`
-            # . # . #
-            . # . # .
-            # . . . #
-            . # . # .
-            # . # . #
-            `)
-        basic.showLeds(`
-            # . . . #
-            . # # # .
-            . # . # .
-            . # # # .
-            # . . . #
-            `)
-        basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # . # .
-            . # # # .
-            . . . . .
-            `)
-        basic.showLeds(`
-            . . . . .
-            . # . # .
-            . . # . .
-            . # . # .
-            . . . . .
-            `)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
-        basic.clearScreen()
-        basic.pause(slowness)
-    } else {
-        basic.clearScreen()
-    }
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . # . .
+        . # . # .
+        . . . . .
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        . . . . .
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        # . . . #
+        . # # # .
+        . # . # .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        # . # . #
+        . # . # .
+        # . . . #
+        . # . # .
+        # . # . #
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        # . # . #
+        . # . # .
+        # . . . #
+        . # . # .
+        # . # . #
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        # . . . #
+        . # # # .
+        . # . # .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # . # .
+        . # # # .
+        . . . . .
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . # . .
+        . # . # .
+        . . . . .
+        `)
+    basic.pause(slowness)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(slowness)
+    basic.clearScreen()
+    basic.pause(slowness2)
 })
